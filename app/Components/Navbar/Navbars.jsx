@@ -10,7 +10,6 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   Button,
-  Chip,
 } from '@nextui-org/react';
 import { motion } from 'framer-motion';
 import { AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
@@ -126,16 +125,16 @@ const Navbars = () => {
         </NavbarContent>
         <NavbarMenu className="bg-yellow max-h-36 border-b-3  border-colors5">
           <NavbarMenuItem>
-            <Link href="#home">Home</Link>
+            <Link href="/home">Home</Link>
           </NavbarMenuItem>
           <NavbarMenuItem>
-            <Link href="#about">About</Link>
+            <Link href="/men">Men</Link>
           </NavbarMenuItem>
           <NavbarMenuItem>
-            <Link href="#services">Our Services</Link>
+            <Link href="/women">Women</Link>
           </NavbarMenuItem>
           <NavbarMenuItem>
-            <Link href="#gallery">Photo Gallery</Link>
+            <Link href="/categories">Categories</Link>
           </NavbarMenuItem>
         </NavbarMenu>
       </Navbar>
