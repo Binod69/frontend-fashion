@@ -20,7 +20,7 @@ const Products = ({ product }) => {
             </Link>
           </CardBody>
           <CardHeader className="pb-0 pt-2 px-4 flex-col  items-start">
-            <p className="text-tiny uppercase font-bold">{product.name}</p>
+            <p className="text-tiny uppercase font-bold">{product.title}</p>
             <small className="text-default-500">{product.price}</small>
             <span className=" overflow-hidden">{product.description}</span>
           </CardHeader>
