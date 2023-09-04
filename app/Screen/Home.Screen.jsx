@@ -1,19 +1,17 @@
 'use client';
-import { useEffect, useState } from 'react';
 import Products from '../Components/Products/Products';
-import axiosInstance from '../config/axios.config';
-import apiEndpoints from '../config/apiEndpoints';
+import { useGetProductsQuery } from '../redux/slice/productsApi.slice';
 
 const HomeScreen = () => {
-  const [products, setProducts] = useState([]);
+  const { data: products, isLoading, isError } = useGetProductsQuery();
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const { data } = await axiosInstance.get(apiEndpoints.PRODUCTS);
-      setProducts(data);
-    };
-    fetchProducts();
-  }, []);
+  if (isLoading) {
+    return <p>loading...</p>;
+  }
+
+  if (isError) {
+    return <p>{isError?.data?.message || isError?.error}</p>;
+  }
   return (
     <>
       <div>
