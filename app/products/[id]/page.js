@@ -1,25 +1,9 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import apiEndpoints from '../../config/apiEndpoints';
-import axiosInstance from '../../config/axios.config';
+import SingleProductScreen from '@/app/Screen/SingleProduct.Screen';
 
 const page = ({ params: { id } }) => {
-  const [product, setProduct] = useState({});
-
-  const fetchedProduct = async () => {
-    const { data } = await axiosInstance.get(`${apiEndpoints.PRODUCTS}/${id}`);
-    setProduct(data);
-  };
-
-  useEffect(() => {
-    fetchedProduct();
-  }, [id]);
-
   return (
     <>
-      <div>
-        <h2>{product.title}</h2>
-      </div>
+      <SingleProductScreen id={id} />
     </>
   );
 };
