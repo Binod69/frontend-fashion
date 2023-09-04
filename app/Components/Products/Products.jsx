@@ -6,7 +6,7 @@ const Products = ({ product }) => {
   return (
     <>
       <div>
-        <Card shadow="sm" isPressable isHoverable>
+        <Card shadow="sm" isPressable isHoverable className="max-w-[100%]">
           <CardBody className="overflow-visible p-0">
             <Link href={`/products/${product._id}`}>
               <Image
